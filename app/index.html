@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunset Cover Studio — GTA-style cover art maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="chrome">
+  <header class="topbar">
+    <div>
+      <h1>Sunset Cover Studio</h1>
+      <p class="tagline">Your photo + a caption → a Vice-style poster. Everything stays on your machine.</p>
+    </div>
+    <div class="top-actions">
+      <button id="shuffle" type="button" class="btn ghost">Shuffle samples</button>
+      <button id="export" type="button" class="btn primary">Export PNG ↓</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="stage">
+      <canvas id="preview" width="960" height="540" aria-label="Live cover preview"></canvas>
+      <p class="hint">Click a panel to select it · drag a photo to reposition it · drop a photo file onto a panel.</p>
+      <div class="size-row">
+        <span class="row-label">Export size</span>
+        <div id="sizes" class="opts"></div>
+      </div>
+      <p id="status" class="status" role="status"></p>
+    </section>
+
+    <aside class="panel">
+      <section>
+        <h2>1 · Photos</h2>
+        <p class="section-note">Three panels, three photos — or one photo in every panel. Upload your own, or try a sample scene.</p>
+        <div id="slots"></div>
+      </section>
+
+      <section>
+        <h2>2 · Layout</h2>
+        <div id="layouts" class="opts wrap"></div>
+      </section>
+
+      <section>
+        <h2>3 · Colour grade</h2>
+        <div id="grades" class="opts wrap"></div>
+      </section>
+
+      <section>
+        <h2>4 · Lettering</h2>
+        <div id="letterings" class="opts wrap"></div>
+        <label class="field">Title
+          <input id="caption" type="text" maxlength="48" value="SUNSET HEIST" autocomplete="off">
+        </label>
+        <label class="field">Subtitle
+          <input id="subtitle" type="text" maxlength="64" value="THREE PANELS · ONE LAST SCORE" autocomplete="off">
+        </label>
+        <label class="field">Corner tag
+          <input id="tagline" type="text" maxlength="32" value="SUNSET COVER STUDIO" autocomplete="off">
+        </label>
+        <fieldset class="field radios">
+          <legend>Title position</legend>
+          <label><input type="radio" name="titlepos" value="bottom" checked> Bottom</label>
+          <label><input type="radio" name="titlepos" value="top"> Top</label>
+        </fieldset>
+      </section>
+
+      <section class="about">
+        <h2>About this cover</h2>
+        <p>Panels, bold lettering and a sunset or neon grade — the poster look, drawn from your own photos. No photo ever leaves your computer; exports are plain PNGs in the post sizes 1080×1080, 1080×1350 and 1920×1080. All art, fonts and lettering in this app are original: the display font is Anton under the SIL Open Font License.</p>
+      </section>
+    </aside>
+  </main>
+</div>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
